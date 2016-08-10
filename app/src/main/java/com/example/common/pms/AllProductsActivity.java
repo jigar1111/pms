@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -122,9 +123,10 @@ public class AllProductsActivity extends ListActivity {
          * */
         protected String doInBackground(String... args) {
             // Building Parameters
-            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            //List<NameValuePair> params = new ArrayList<NameValuePair>();
+            //ContentValues cv = new ContentValues();
             // getting JSON string from URL
-            JSONObject json = jParser.makeHttpRequest(url_all_products, "GET", params);
+            JSONObject json = jParser.makeHttpRequest(url_all_products, "GET", cv);
 
             // Check your log cat for JSON reponse
             Log.d("All Products: ", json.toString());
